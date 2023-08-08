@@ -20,6 +20,46 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Bags/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFnc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Bags/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFnc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Bags/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFnc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Bags/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFnc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Bags/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFnc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vlady/OneDrive/Desktop/ASP.NET/assignment/Assignment/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
