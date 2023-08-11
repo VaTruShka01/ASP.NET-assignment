@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment.Data;
 using Assignment.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment.Controllers
 {
+
+    [Authorize(Roles = "Administrator")]
     public class BagsController : Controller
     {
         private readonly ApplicationDbContext _context;

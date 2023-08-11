@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Assignment.Data;
 using Assignment.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -28,6 +30,7 @@ namespace Assignment.Controllers
         }
 
         // GET: Categories/Details/5
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Categories == null)
