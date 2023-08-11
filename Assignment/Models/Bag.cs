@@ -15,12 +15,15 @@ namespace Assignment.Models
         [Required()]
         public string Description { get; set; }
         [Required()]
-        public double Capacity { get; set; }
+        public decimal Capacity { get; set; }
         [Required()]
         public string Color { get; set; }
         [Required()]
-        public DateTime Published { get; set; }
 
+        public decimal Price { get; set; }
+        [Required()]
+        public DateTime Published { get; set; }
+        
         public Category ? Category { get; set; }
 
 

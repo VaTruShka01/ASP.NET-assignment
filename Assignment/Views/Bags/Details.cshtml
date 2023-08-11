@@ -1,11 +1,11 @@
 ﻿@model Assignment.Models.Bag
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details of a Bag";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div>
     <h4>Bag</h4>
@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Capacity)
+            Capacity (liter)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Capacity)
