@@ -1,0 +1,80 @@
+﻿@model Assignment.Models.Order
+
+
+
+
+@{
+    ViewData["Title"] = "Order Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var cartItem in Model.Cart.CartItems)
+            {
+                var subtotal = cartItem.Quantity * cartItem.Price;
+
+                <tr>
+                    <td>@cartItem.Bag.Name</td>
+                    <td>@cartItem.Quantity</td>
+                    <td>@cartItem.Price</td>
+                    <td>@subtotal</td>
+                    <td>
+                        <form class="d-inline" asp-route-id="@cartItem.Id" asp-action="DeleteCartItem">
+                            <input type="hidden" name="cartId" value="@cartItem.Id" />
+                            <input class="btn btn-danger" type="submit" value="Remove" />
+                        </form>
+
+                        <a class="btn btn-secondary" asp-action="BagDetails" asp-route-id="@cartItem.BagId">View Product</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+            
+            <tr>
+                <th>Total:</th>
+                <td colspan="3" style="text-align: right">@Model.Total</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div>
+    <form asp-action="Payment">
+        <div class="form-group my-3">
+            <label asp-for="ShippingAddress" class="control-label"></label>
+            <input asp-for="ShippingAddress" class="form-control" required />
+            <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+        </div>
+
+        <div class="form-group my-3">
+            <label asp-for="PaymentMethods" class="control-label"></label>
+            <select asp-for="PaymentMethods" class="form-control" asp-items="ViewBag.PaymentMethods"></select>
+        </div>
+
+        <div class="form-group my-3">
+            <input type="submit" value="Go to Payment" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+
+<div>
+
+    <a class="btn btn-secondary" asp-action="ViewMyCart">Back to Cart</a>
+</div>

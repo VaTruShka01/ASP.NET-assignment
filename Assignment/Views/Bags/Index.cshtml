@@ -22,8 +22,12 @@
             <th>
                 Capacity (liter)
             </th>
+
+
             <th>
                 @Html.DisplayNameFor(model => model.Color)
+            </th><th>
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Published)
@@ -48,6 +52,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Color)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Published)
@@ -56,9 +63,9 @@
                 @Html.DisplayFor(modelItem => item.Category.Description)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class = "btn btn-secondary my-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-secondary my-1" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-secondary my-1" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

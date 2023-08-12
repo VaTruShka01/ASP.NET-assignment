@@ -50,8 +50,19 @@
                         }
                         else
                         {
+
+                            @if (menuItem.Action == "ViewMyCart")
+                            {
+                                <a style="margin-left:auto; margin-right: 0" class="nav-link text-dark" asp-controller="@menuItem.Controller" asp-action="@menuItem.Action">@menuItem.Label</a>
+                                continue;
+                            }
+                           
+
                             <li class="nav-item">
+                               
+
                                 <a class="nav-link text-dark" asp-controller="@menuItem.Controller" asp-action="@menuItem.Action">@menuItem.Label</a>
+                                
                             </li>
                         }
                     }

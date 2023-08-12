@@ -1,7 +1,7 @@
 ﻿@model Assignment.Models.Bag
 
 @{
-    ViewData["Title"] = "Details of a Bag";
+    ViewData["Title"] = Model.Name + " Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            Capacity (liter)
+            @Html.DisplayNameFor(model => model.Capacity)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Capacity)
@@ -36,19 +36,17 @@
             @Html.DisplayFor(model => model.Color)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Published)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Published)
-        </dd> 
-        
-       <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Price)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
-
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Published)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
@@ -58,6 +56,24 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <form class="d-inline my-3" asp-action="AddToCart">
+            <input type="hidden" name="bagId" value="@Model.Id" />
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Quantity</span>
+                </div>
+
+                <input class="form-control" type="number" name="quantity" min="50" step="10" value="50" />
+
+                <div class="input-group-append">
+                    <input type="submit" value="Add to Cart" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    }
+    <a class="btn btn-secondary my-3" asp-route-id = "@Model.CategoryId" asp-action="Details">Back to List</a>
+    <a class="btn btn-secondary my-3" asp-controller="Shop" asp-action="ViewMyCart">View Cart</a>
 </div>
