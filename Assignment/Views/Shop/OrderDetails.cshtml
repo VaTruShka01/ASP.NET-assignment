@@ -1,0 +1,56 @@
+﻿@model Assignment.Models.Order
+
+
+
+
+@{
+    ViewData["Title"] = "Order Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var cartItem in Model.Cart.CartItems)
+            {
+                var subtotal = cartItem.Quantity * cartItem.Price;
+
+                <tr>
+                    <td>@cartItem.Bag.Name</td>
+                    <td>@cartItem.Quantity</td>
+                    <td>@cartItem.Price</td>
+                    <td>@subtotal</td>
+                    <td>
+                        <a class="btn btn-secondary" asp-action="BagDetails" asp-route-id="@cartItem.BagId">View Product</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+                <th>Total:</th>
+                <td colspan="3" style="text-align: right">@Model.Total</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div>
+
+    <a class="btn btn-secondary" asp-action="Index">Back to Categories</a>
+</div>
