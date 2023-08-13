@@ -3,16 +3,10 @@
 - [Introduction](#introduction)
 - [Purpose](#purpose)
 - [Features](#features)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 
 Welcome to PacketOff Webstore! This application serves as a simple yet functional webstore where users can explore and purchase bags.
-
-![PacketOff Webstore](website-screenshot.png)
 
 ## Purpose
 
