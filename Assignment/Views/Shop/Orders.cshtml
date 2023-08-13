@@ -10,9 +10,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.Total)
             </th>
@@ -25,9 +23,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.PaymentMethods)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cart)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -35,9 +31,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Total)
                 </td>
@@ -50,11 +44,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.PaymentMethods)
                 </td>
+                
                 <td>
-                    @Html.DisplayFor(modelItem => item.Cart.Id)
-                </td>
-                <td>
-                    <a asp-action="OrderDetails" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn-secondary" asp-action="OrderDetails" asp-route-id="@item.Id">Details</a> 
                 </td>
             </tr>
         }

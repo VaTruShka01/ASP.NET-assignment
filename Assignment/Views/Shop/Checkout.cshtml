@@ -56,8 +56,10 @@
 </div>
 
 <div>
-    <form asp-action="Payment">
-        <div class="form-group my-3">
+    @if (Model.Total != 0)
+    {
+        <form asp-action="Payment">
+            <div class="form-group my-3">
             <label asp-for="ShippingAddress" class="control-label"></label>
             <input asp-for="ShippingAddress" class="form-control" required />
             <span asp-validation-for="ShippingAddress" class="text-danger"></span>
@@ -72,6 +74,7 @@
             <input type="submit" value="Go to Payment" class="btn btn-success" />
         </div>
     </form>
+    }
 </div>
 
 <div>

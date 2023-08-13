@@ -174,6 +174,7 @@ namespace Assignment.Controllers
 
             ViewData["PaymentMethods"] = new SelectList(Enum.GetValues(typeof(PaymentMethods)));
 
+
             return View(order);
         }
 

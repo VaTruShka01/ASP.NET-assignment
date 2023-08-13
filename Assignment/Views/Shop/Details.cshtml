@@ -5,75 +5,66 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+<section class="">
+    
+            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    
+                <div class="p-5">
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                        <h1 class="fw-bold mb-0 text-black">@ViewData["Title"]</h1>
+                        <h6 class="mb-0 text-muted">@Model.Bags.Count items</h6>
+                    </div>
+                    <hr class="my-4">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Description)
-            </th>                                   
-            <th>                                    
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Capacity)
-            </th>                                   
-            <th>                                    
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Published)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bags.FirstOrDefault().Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Bags) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Published)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Description)
-            </td>
-            <td>
+                    @foreach (var item in Model.Bags)
+                    {
+                        <div class="row mb-4 d-flex justify-content-between align-items-center">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                                <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" class="img-fluid rounded-3" alt="@item.Name">
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-xl-1">
+                                <h6 class="text-muted">@item.Category.Description</h6>
+                                <h6 class="text-black mb-0">@item.Name</h6>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-xl-1 d-flex">
+                                
+                                <h6 class="text-black mb-0">@item.Description</h6>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 d-flex">
+                                <h6 class="text-black mb-0">@item.Capacity L.</h6>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 d-flex">
+                                <h6 class="text-black mb-0">@item.Color</h6>
+                                </div>
+                            
+                            <div class="col-md-1 col-lg-1 col-xl-1 offset-lg-1">
+                                <h6 class="mb-0">$ @item.Price.ToString("0.00")</h6>
+                            </div>
+                            <div class="col-md-2 col-lg-2 col-xl-2 text-center">
 
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <form class="d-inline my-1" asp-action="AddToCart">
-                        <input type="hidden" name="bagId" value="@item.Id" />
-                        <input type="hidden" name="quantity" value="50" />
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                <form class="d-inline my-1" asp-action="AddToCart">
+                                    <input type="hidden" name="bagId" value="@item.Id" />
+                                    <input type="hidden" name="quantity" value="50" />
 
-                        <input type="submit" value="Quick Add" class="btn btn-primary" />
-                    </form>
-                }
+                                    <input type="submit" value="Quick Add" class="btn btn-primary" />
+                                </form>
+                                 }
 
-                <a class="btn btn-secondary my-1" asp-action="BagDetails" asp-route-id ="@item.Id">View Details</a>
-                
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                                <a class="btn btn-secondary my-1" asp-action="BagDetails" asp-route-id ="@item.Id">View Details</a>
+
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                    }
+
+                    <div class="pt-5">
+                        <h6 class="mb-0">
+                             <a class="btn btn-secondary my-1" asp-action="Index" >Back to Shop</a>
+                             <a class="btn btn-secondary my-1" asp-action="ViewMyCart" >View Cart</a>
+                        </h6>
+                    </div>
+                </div>     
+            </div
+</section>
