@@ -20,6 +20,7 @@ namespace Assignment.Components.ViewComponents
                     new MenuItem { Controller = "Orders", Action = "Index", Label = "Orders" },
                     new MenuItem { Controller = "Carts", Action = "Index", Label = "Carts" }
                     }},
+                new MenuItem {Controller = "Home", Action = "About", Label = "About" },
                 new MenuItem {Controller= "Home", Action = "Privacy" , Label = "Privacy"},
                 new MenuItem { Controller = "Shop", Action = "ViewMyCart", Label = "My Cart", Authorized = true}
                 };
